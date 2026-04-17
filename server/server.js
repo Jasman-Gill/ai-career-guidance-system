@@ -4,6 +4,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import resumeRoutes from "./routes/resumeRoutes.js";
+import analysisRoutes from "./routes/analysisRoutes.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use("/api/resume", resumeRoutes);
+app.use("/api/analysis", analysisRoutes);
 
 app.use("/api/auth", authRoutes);
 

@@ -1,10 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Analysis from "./pages/Analysis";
+
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-black text-white">
-      <h1 className="text-4xl font-bold">
-        AI Career Guidance System 🚀
-      </h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/analysis" element={<Analysis />} />
+      </Routes>
+    </Router>
   );
 }
 
