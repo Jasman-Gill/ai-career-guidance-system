@@ -3,7 +3,7 @@ import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 import "../styles/auth.css";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, isFirebaseConfigured } from "../firebase";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -29,6 +29,11 @@ function Login() {
     const handleGoogleLogin = async (e) => {
         e.preventDefault();
 
+        if (!isFirebaseConfigured || !auth) {
+            alert("Google login is not configured. Add VITE_FIREBASE_* in client/.env");
+            return;
+        }
+
         try {
             const provider = new GoogleAuthProvider();
             const result = await signInWithPopup(auth, provider);
@@ -50,7 +55,7 @@ function Login() {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100">
+        <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-900 transition-colors">
             <form className="form" onSubmit={handleLogin}>
                 <div className="flex-column">
                     <label>Email</label>
@@ -90,7 +95,17 @@ function Login() {
                     Sign In
                 </button>
 
-                <button className="btn" type="button" onClick={handleGoogleLogin}>
+                <button
+                    className="btn"
+                    type="button"
+                    onClick={handleGoogleLogin}
+                    disabled={!isFirebaseConfigured}
+                    title={
+                        isFirebaseConfigured
+                            ? "Continue with Google"
+                            : "Set VITE_FIREBASE_* in client/.env to enable Google login"
+                    }
+                >
                     <svg
                         aria-hidden="true"
                         width="18"

@@ -27,7 +27,7 @@ function Register() {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100">
+        <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-900 transition-colors">
             <form className="form" onSubmit={handleRegister}>
                 <h2 className="text-xl font-bold">Sign Up</h2>
 

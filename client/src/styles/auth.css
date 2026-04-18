@@ -115,3 +115,42 @@
     border: 1px solid #2d79f3;
     ;
 }
+
+.dark .form {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+
+.dark .flex-column > label,
+.dark .flex-row > div > label,
+.dark .p {
+    color: #e5e7eb;
+}
+
+.dark .inputForm {
+    border: 1.5px solid #374151;
+    background-color: #1f2937;
+}
+
+.dark .input {
+    background-color: transparent;
+    color: #f9fafb;
+}
+
+.dark .input::placeholder {
+    color: #9ca3af;
+}
+
+.dark .button-submit {
+    background-color: #2563eb;
+}
+
+.dark .button-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.dark .btn {
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: #f9fafb;
+}

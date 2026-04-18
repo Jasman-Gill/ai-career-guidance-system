@@ -84,3 +84,43 @@ export const googleLogin = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const updateProfile = async (req, res) => {
+    try {
+        const { userId, name, email, interests } = req.body;
+
+        if (!userId) {
+            return res.status(400).json({ message: "User ID is required" });
+        }
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        if (email && email !== user.email) {
+            const emailInUse = await User.findOne({ email });
+            if (emailInUse) {
+                return res.status(400).json({ message: "Email is already in use" });
+            }
+        }
+
+        user.name = name?.trim() || user.name;
+        user.email = email?.trim() || user.email;
+        user.interests = Array.isArray(interests)
+            ? interests.filter((item) => typeof item === "string" && item.trim())
+            : user.interests;
+
+        await user.save();
+
+        return res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            interests: user.interests,
+            token: generateToken(user._id),
+        });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};

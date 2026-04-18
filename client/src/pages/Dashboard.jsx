@@ -1,61 +1,51 @@
-import { useState } from "react";
-import API from "../services/api";
-import { useNavigate } from "react-router-dom";
+import Layout from "../../components/layout/Layout";
+import UploadForm from "../../components/layout/UploadForm";
 
 function Dashboard() {
-    const [file, setFile] = useState(null);
-    const [skills, setSkills] = useState("");
-    const [interests, setInterests] = useState("");
-    const navigate = useNavigate();
-
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    const handleSubmit = async () => {
-        try {
-            const formData = new FormData();
-            formData.append("resume", file);
-            formData.append("userId", user._id);
-
-            // Upload resume
-            await API.post("/resume/upload", formData);
-
-            // AI Analysis
-            const { data } = await API.post("/analysis/analyze", {
-                userId: user._id,
-                manualSkills: skills.split(","),
-                interests: [interests],
-            });
-
-            localStorage.setItem("analysis", JSON.stringify(data.result));
-            navigate("/analysis");
-        } catch (err) {
-            console.log(err);
-            alert("Error processing");
-        }
-    };
-
     return (
-        <div className="p-10 bg-black text-white min-h-screen">
-            <h1 className="text-3xl mb-6">Dashboard</h1>
+        <Layout>
+            {/* HERO SECTION */}
+            <div className="mb-8">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    Welcome Back 👋
+                </h1>
+                <p className="text-gray-600 dark:text-gray-300">
+                    Analyze your career path using AI
+                </p>
+            </div>
 
-            <input type="file" onChange={(e) => setFile(e.target.files[0])} className="mb-4" />
+            <UploadForm />
 
-            <input
-                className="block w-full p-2 mb-3 bg-gray-800"
-                placeholder="Skills (comma separated)"
-                onChange={(e) => setSkills(e.target.value)}
-            />
+            {/* CARDS */}
+            <div className="grid grid-cols-3 gap-6">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-lg">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        Resume Analysis
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        Upload and analyze your resume
+                    </p>
+                </div>
 
-            <input
-                className="block w-full p-2 mb-3 bg-gray-800"
-                placeholder="Interest (e.g. Web Dev)"
-                onChange={(e) => setInterests(e.target.value)}
-            />
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-lg">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        Skill Gap
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        Identify missing skills
+                    </p>
+                </div>
 
-            <button onClick={handleSubmit} className="bg-blue-500 px-4 py-2 rounded">
-                Analyze Career 🚀
-            </button>
-        </div>
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-lg">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        Career Paths
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        AI-based recommendations
+                    </p>
+                </div>
+            </div>
+        </Layout>
     );
 }
 
