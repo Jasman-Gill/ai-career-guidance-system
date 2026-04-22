@@ -8,6 +8,12 @@ const resumeSchema = new mongoose.Schema(
         },
         filePath: String,
         extractedText: String,
+        originalFileName: String,
+        analysisResult: mongoose.Schema.Types.Mixed,
+        dreamRole: String,
+        dreamCompany: String,
+        manualSkills: [String],
+        interests: [String],
     },
     { timestamps: true }
 );

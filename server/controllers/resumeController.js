@@ -3,14 +3,27 @@ import parsePDF from "../utils/pdfParser.js";
 
 export const uploadResume = async (req, res) => {
     try {
+        if (!req.file) {
+            return res.status(400).json({
+                message: "Resume file is required. Please upload a PDF resume.",
+            });
+        }
+
         const filePath = req.file.path;
 
         // Extract text from PDF
         const extractedText = await parsePDF(filePath);
 
+        if (!String(extractedText || "").trim()) {
+            return res.status(400).json({
+                message: "We could not read text from this PDF. Try another PDF export of your resume.",
+            });
+        }
+
         const resume = await Resume.create({
             userId: req.body.userId,
             filePath,
+            originalFileName: req.file.originalname,
             extractedText,
         });
 
@@ -19,6 +32,8 @@ export const uploadResume = async (req, res) => {
             extractedText,
         });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        const statusCode =
+            error.message?.includes("Only PDF resumes are supported") ? 400 : 500;
+        res.status(statusCode).json({ message: error.message });
     }
 };
