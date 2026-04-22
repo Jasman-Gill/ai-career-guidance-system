@@ -24,7 +24,7 @@ function Settings() {
             description="Manage your app preferences and choose how the career guidance workspace behaves for you."
         >
             <div className="grid gap-6 xl:grid-cols-2">
-                <section className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                <section className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                     <div className="flex items-center gap-3">
                         <IconBubble icon="moon" tone="orange" className="h-10 w-10 rounded-xl" />
                         <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -48,7 +48,7 @@ function Settings() {
                     </div>
                 </section>
 
-                <section className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                <section className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                     <div className="flex items-center gap-3">
                         <IconBubble icon="bell" tone="sky" className="h-10 w-10 rounded-xl" />
                         <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -76,7 +76,7 @@ function Settings() {
                         ].map((item) => (
                             <div
                                 key={item.key}
-                                className="flex items-center justify-between rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-slate-950/40"
+                                className="motion-card flex items-center justify-between rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-slate-950/40"
                             >
                                 <div>
                                     <p className="text-sm font-semibold text-slate-900 dark:text-white">

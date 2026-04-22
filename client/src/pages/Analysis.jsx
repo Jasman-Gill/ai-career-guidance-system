@@ -33,7 +33,7 @@ function Analytics() {
                         ].map((card) => (
                             <article
                                 key={card.label}
-                                className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65"
+                                className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65"
                             >
                                 <IconBubble icon={card.icon} tone="slate" className="h-9 w-9 rounded-xl" />
                                 <p className="text-sm text-slate-500 dark:text-slate-400">{card.label}</p>
@@ -47,7 +47,7 @@ function Analytics() {
                     <SkillChart skills={skills} missing={missingSkills} />
 
                     <section className="grid gap-6 lg:grid-cols-2">
-                        <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                        <article className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                             <div className="flex items-center gap-3">
                                 <IconBubble icon="analytics" tone="emerald" className="h-10 w-10 rounded-xl" />
                                 <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -72,7 +72,7 @@ function Analytics() {
                             </div>
                         </article>
 
-                        <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                        <article className="motion-card motion-fade-up-delay-2 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                             <div className="flex items-center gap-3">
                                 <IconBubble icon="trend" tone="orange" className="h-10 w-10 rounded-xl" />
                                 <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">

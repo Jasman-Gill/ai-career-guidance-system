@@ -12,7 +12,7 @@ function Career() {
             description="Review the career paths that best match your current profile and see how your target role and company shape the recommendations."
         >
             <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-                <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                <article className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                     <div className="flex items-center gap-3">
                         <IconBubble icon="career" tone="slate" filled />
                         <div>
@@ -30,7 +30,7 @@ function Career() {
                             careers.map((career, index) => (
                                 <div
                                     key={career}
-                                    className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-slate-950/40"
+                                    className="motion-card rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-slate-950/40"
                                 >
                                     <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
                                         Option {index + 1}
@@ -52,7 +52,7 @@ function Career() {
                 </article>
 
                 <div className="space-y-6">
-                    <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                    <article className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                         <div className="flex items-center gap-3">
                             <IconBubble icon="target" tone="orange" className="h-10 w-10 rounded-xl" />
                             <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -65,7 +65,7 @@ function Career() {
                         </p>
                     </article>
 
-                    <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                    <article className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                         <div className="flex items-center gap-3">
                             <IconBubble icon="company" tone="sky" className="h-10 w-10 rounded-xl" />
                             <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -80,7 +80,7 @@ function Career() {
                         </p>
                     </article>
 
-                    <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                    <article className="motion-card motion-fade-up-delay-2 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                         <div className="flex items-center gap-3">
                             <IconBubble icon="trend" tone="emerald" className="h-10 w-10 rounded-xl" />
                             <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">

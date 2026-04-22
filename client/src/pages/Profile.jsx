@@ -56,7 +56,7 @@ function Profile() {
         >
             <div className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
                 <section className="space-y-6">
-                    <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                    <article className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                         <div className="flex h-16 w-16 items-center justify-center rounded-[1.5rem] bg-slate-900 text-xl font-semibold text-white dark:bg-orange-400 dark:text-slate-950">
                             {(user?.name || user?.email || "U")
                                 .split(" ")
@@ -76,7 +76,7 @@ function Profile() {
                             {stats.map((stat) => (
                                 <div
                                     key={stat.label}
-                                    className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-slate-950/40"
+                                    className="motion-card rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-slate-950/40"
                                 >
                                     <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
                                         {stat.label}
@@ -90,7 +90,7 @@ function Profile() {
                     </article>
                 </section>
 
-                <section className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                <section className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                     <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
                         Edit profile information
                     </h2>
@@ -153,7 +153,7 @@ function Profile() {
                         <button
                             type="submit"
                             disabled={saving}
-                            className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300"
+                            className="motion-button inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300"
                         >
                             {saving ? "Saving..." : "Save changes"}
                             <IconBubble icon="spark" tone="slate" className="h-7 w-7 rounded-xl bg-transparent text-white dark:text-slate-950" />

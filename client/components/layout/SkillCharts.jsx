@@ -15,7 +15,7 @@ function SkillChart({ skills = [], missing = [] }) {
     ];
 
     return (
-        <section className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65 dark:shadow-[0_24px_80px_rgba(2,6,23,0.4)]">
+        <section className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65 dark:shadow-[0_24px_80px_rgba(2,6,23,0.4)]">
             <div className="mb-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-orange-500">
                     Skill Snapshot

@@ -37,13 +37,13 @@ function Dashboard() {
                 <>
                     <Link
                         to="/analytics"
-                        className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200"
+                        className="motion-button inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200"
                     >
                         View analytics
                     </Link>
                     <Link
                         to="/roadmap"
-                        className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300"
+                        className="motion-button motion-glow inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300"
                     >
                         Open roadmap
                         <span aria-hidden="true">-&gt;</span>
@@ -51,15 +51,15 @@ function Dashboard() {
                 </>
             }
         >
-            <section className="grid gap-4 lg:grid-cols-3">
+            <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {heroCards.map(({ label, value, icon }) => (
                     <article
                         key={label}
-                        className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65"
+                        className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65"
                     >
                         <IconBubble icon={icon} tone="orange" />
                         <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">{label}</p>
-                        <h2 className="mt-2 font-display text-2xl font-semibold text-slate-900 dark:text-white">
+                        <h2 className="mt-2 break-words font-display text-xl font-semibold text-slate-900 sm:text-2xl dark:text-white">
                             {value}
                         </h2>
                     </article>
@@ -71,7 +71,7 @@ function Dashboard() {
             </div>
 
             <section className="mt-6 grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-                <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                <article className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                     <div className="flex items-center gap-3">
                         <IconBubble icon="analytics" tone="slate" filled />
                         <div>
@@ -150,7 +150,7 @@ function Dashboard() {
                     </div>
                 </article>
 
-                <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                <article className="motion-card motion-fade-up-delay-2 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                     <p className="text-xs font-semibold uppercase tracking-[0.28em] text-orange-500">
                         What to do next
                     </p>

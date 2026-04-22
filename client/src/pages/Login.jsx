@@ -64,7 +64,7 @@ function Login() {
     return (
         <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.18),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.18),_transparent_25%),linear-gradient(180deg,_#fff8ef_0%,_#fffdf7_38%,_#f4fbff_100%)] px-4 py-10 dark:bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.18),_transparent_20%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.16),_transparent_22%),linear-gradient(180deg,_#0f172a_0%,_#111827_45%,_#020617_100%)]">
             <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="rounded-[2.5rem] border border-white/70 bg-white/75 p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] backdrop-blur dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
+                <div className="motion-card motion-fade-up rounded-[2.5rem] border border-white/70 bg-white/75 p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] backdrop-blur dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
                     <Link to="/" className="text-sm font-semibold text-orange-500">
                         Back to landing page
                     </Link>
@@ -86,7 +86,7 @@ function Login() {
                         ].map((item) => (
                             <div
                                 key={item}
-                                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200"
+                                className="motion-card flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200"
                             >
                                 <IconBubble icon="spark" tone="orange" className="h-8 w-8 rounded-xl bg-transparent" />
                                 {item}
@@ -95,7 +95,7 @@ function Login() {
                     </div>
                 </div>
 
-                <div className="rounded-[2.5rem] border border-slate-200/70 bg-white p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-slate-950/55 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
+                <div className="motion-card motion-fade-up-delay-1 rounded-[2.5rem] border border-slate-200/70 bg-white p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-slate-950/55 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
                         Sign in
                     </p>
@@ -147,7 +147,7 @@ function Login() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300"
+                            className="motion-button inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300"
                         >
                             {loading ? "Signing in..." : "Login"}
                             <span aria-hidden="true">-&gt;</span>
@@ -158,7 +158,7 @@ function Login() {
                         type="button"
                         onClick={handleGoogleLogin}
                         disabled={loading}
-                        className="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-500 disabled:cursor-not-allowed disabled:opacity-70 dark:border-white/10 dark:bg-slate-900/50 dark:text-white"
+                        className="motion-button mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-500 disabled:cursor-not-allowed disabled:opacity-70 dark:border-white/10 dark:bg-slate-900/50 dark:text-white"
                     >
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 48 48">
                             <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.655 32.659 29.391 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.962 3.038l5.657-5.657C34.322 6.053 29.445 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" />

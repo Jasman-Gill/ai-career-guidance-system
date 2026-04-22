@@ -13,7 +13,7 @@ const pageTitles = {
     "/profile": "Profile",
 };
 
-function Navbar() {
+function Navbar({ onOpenSidebar }) {
     const location = useLocation();
     const { dark, setDark } = useTheme();
     const user = readStoredUser();
@@ -72,35 +72,36 @@ function Navbar() {
     }, []);
 
     return (
-        <header className="sticky top-0 z-30 border-b border-slate-200/70 bg-white/75 backdrop-blur dark:border-white/10 dark:bg-slate-950/55">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-3">
+        <header className="motion-fade-up sticky top-0 z-30 border-b border-slate-200/70 bg-white/75 backdrop-blur dark:border-white/10 dark:bg-slate-950/55">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+                <div className="flex min-w-0 items-center gap-3">
                     <button
                         type="button"
+                        onClick={onOpenSidebar}
                         className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 xl:hidden dark:border-white/10 dark:bg-slate-900 dark:text-slate-300"
                         aria-label="Navigation menu"
                     >
                         <IconBubble icon="menu" tone="slate" className="h-7 w-7 rounded-xl bg-transparent" />
                     </button>
 
-                    <div>
+                    <div className="min-w-0">
                         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-orange-500">
                             {pageTitles[location.pathname] || "Workspace"}
                         </p>
-                        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                        <p className="mt-1 truncate text-sm text-slate-500 dark:text-slate-400">
                             Welcome back, {user?.name?.split(" ")[0] || "there"}.
                         </p>
                     </div>
                 </div>
 
-                <div className="hidden min-w-[280px] items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm md:flex dark:border-white/10 dark:bg-slate-900">
+                <div className="motion-card hidden min-w-[240px] items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm lg:flex dark:border-white/10 dark:bg-slate-900">
                     <IconBubble icon="search" tone="slate" className="h-7 w-7 rounded-xl bg-transparent text-slate-400" />
                     <span className="text-sm text-slate-400">
                         Search roles, companies, skills, and learning plans
                     </span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex shrink-0 items-center gap-2 sm:gap-3">
                     <button
                         type="button"
                         onClick={() => setDark(!dark)}
@@ -131,7 +132,7 @@ function Navbar() {
                         </button>
 
                         {isNotificationsOpen ? (
-                            <div className="absolute right-0 mt-3 w-80 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.15)] dark:border-white/10 dark:bg-slate-900">
+                            <div className="absolute right-0 mt-3 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.15)] dark:border-white/10 dark:bg-slate-900">
                                 <div className="border-b border-slate-200 px-4 py-3 dark:border-white/10">
                                     <p className="text-sm font-semibold text-slate-900 dark:text-white">
                                         Notifications
@@ -161,7 +162,7 @@ function Navbar() {
 
                     <Link
                         to="/profile"
-                        className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-1.5 pr-4 shadow-sm transition hover:border-orange-300 dark:border-white/10 dark:bg-slate-900"
+                        className="motion-card flex items-center gap-2 rounded-2xl border border-slate-200 bg-white p-1.5 pr-2 shadow-sm transition hover:border-orange-300 sm:gap-3 sm:pr-4 dark:border-white/10 dark:bg-slate-900"
                     >
                         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-semibold text-white dark:bg-orange-400 dark:text-slate-950">
                             {initials}

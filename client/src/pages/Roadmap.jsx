@@ -100,7 +100,7 @@ function Roadmap() {
                 </section>
             ) : (
                 <div className="space-y-6">
-                    <section className="overflow-hidden rounded-[2.5rem] border border-slate-200/70 bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.16),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.16),_transparent_26%),linear-gradient(135deg,_rgba(255,255,255,0.96),_rgba(255,250,245,0.92))] p-6 shadow-[0_28px_90px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.16),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.14),_transparent_24%),linear-gradient(135deg,_rgba(15,23,42,0.92),_rgba(17,24,39,0.88))]">
+                    <section className="motion-card motion-fade-up motion-glow overflow-hidden rounded-[2rem] border border-slate-200/70 bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.16),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.16),_transparent_26%),linear-gradient(135deg,_rgba(255,255,255,0.96),_rgba(255,250,245,0.92))] p-5 shadow-[0_28px_90px_rgba(15,23,42,0.08)] sm:rounded-[2.5rem] sm:p-6 dark:border-white/10 dark:bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.16),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.14),_transparent_24%),linear-gradient(135deg,_rgba(15,23,42,0.92),_rgba(17,24,39,0.88))]">
                         <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr] xl:items-center">
                             <div>
                                 <div className="inline-flex items-center gap-3 rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-sm font-semibold text-orange-600 dark:border-orange-400/20 dark:bg-white/5 dark:text-orange-200">
@@ -108,7 +108,7 @@ function Roadmap() {
                                     90-Day Learning Plan
                                 </div>
 
-                                <h2 className="mt-5 max-w-3xl font-display text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-[2.8rem]">
+                                <h2 className="mt-5 max-w-3xl font-display text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white sm:text-[2.8rem]">
                                     A structured roadmap for steady role-focused preparation.
                                 </h2>
 
@@ -176,7 +176,7 @@ function Roadmap() {
                     </section>
 
                     <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-                        <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                        <article className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                             <div className="flex items-center gap-3">
                                 <IconBubble icon="roadmap" tone="slate" filled />
                                 <div>
@@ -189,16 +189,16 @@ function Roadmap() {
                                 </div>
                             </div>
 
-                            <div className="relative mt-8 space-y-5 pl-4 sm:pl-6">
+                            <div className="relative mt-8 space-y-5 pl-2 sm:pl-6">
                                 <div className="absolute bottom-0 left-[1.45rem] top-0 w-[2px] bg-gradient-to-b from-orange-300 via-sky-300 to-emerald-300 dark:from-orange-400/35 dark:via-sky-400/30 dark:to-emerald-400/35" />
 
                                 {roadmapPhases.map((phase) => (
-                                    <div key={`${phase.title}-${phase.phaseNumber}`} className="relative">
-                                        <div className="absolute left-[-0.15rem] top-6 z-10 flex h-12 w-12 items-center justify-center rounded-[1.2rem] border-4 border-white bg-slate-900 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(15,23,42,0.12)] dark:border-slate-900 dark:bg-orange-400 dark:text-slate-950">
+                                    <div key={`${phase.title}-${phase.phaseNumber}`} className="motion-fade-up relative">
+                                        <div className="absolute left-[0.1rem] top-6 z-10 flex h-10 w-10 items-center justify-center rounded-[1rem] border-4 border-white bg-slate-900 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(15,23,42,0.12)] sm:left-[-0.15rem] sm:h-12 sm:w-12 sm:rounded-[1.2rem] dark:border-slate-900 dark:bg-orange-400 dark:text-slate-950">
                                             {phase.phaseNumber}
                                         </div>
 
-                                        <div className="ml-14 rounded-[1.65rem] border border-slate-200/80 bg-[linear-gradient(135deg,_rgba(255,255,255,0.96),_rgba(248,250,252,0.9))] p-4 shadow-[0_16px_45px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-[linear-gradient(135deg,_rgba(15,23,42,0.78),_rgba(30,41,59,0.56))]">
+                                        <div className="motion-card ml-12 rounded-[1.4rem] border border-slate-200/80 bg-[linear-gradient(135deg,_rgba(255,255,255,0.96),_rgba(248,250,252,0.9))] p-4 shadow-[0_16px_45px_rgba(15,23,42,0.06)] sm:ml-14 sm:rounded-[1.65rem] dark:border-white/10 dark:bg-[linear-gradient(135deg,_rgba(15,23,42,0.78),_rgba(30,41,59,0.56))]">
                                             <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                                                 <div>
                                                     <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
@@ -246,7 +246,7 @@ function Roadmap() {
                         </article>
 
                         <div className="space-y-6">
-                            <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                            <article className="motion-card motion-fade-up-delay-1 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                                 <div className="flex items-center gap-3">
                                     <IconBubble icon="trend" tone="orange" className="h-10 w-10 rounded-xl" />
                                     <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -276,7 +276,7 @@ function Roadmap() {
                                 </div>
                             </article>
 
-                            <article className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
+                            <article className="motion-card motion-fade-up-delay-2 rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65">
                                 <div className="flex items-center gap-3">
                                     <IconBubble icon="clock" tone="sky" className="h-10 w-10 rounded-xl" />
                                     <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
@@ -303,7 +303,7 @@ function Roadmap() {
                                 </div>
                             </article>
 
-                            <article className="rounded-[2rem] border border-slate-200/70 bg-gradient-to-br from-slate-900 to-slate-800 p-6 text-white shadow-[0_28px_80px_rgba(15,23,42,0.2)] dark:border-white/10 dark:from-orange-500 dark:to-amber-500 dark:text-slate-950">
+                            <article className="motion-card motion-fade-up-delay-2 motion-glow rounded-[2rem] border border-slate-200/70 bg-gradient-to-br from-slate-900 to-slate-800 p-6 text-white shadow-[0_28px_80px_rgba(15,23,42,0.2)] dark:border-white/10 dark:from-orange-500 dark:to-amber-500 dark:text-slate-950">
                                 <div className="flex items-center gap-3">
                                     <IconBubble icon="spark" tone="orange" className="h-10 w-10 rounded-xl bg-white/15 text-white dark:bg-black/10 dark:text-slate-950" />
                                     <h2 className="font-display text-2xl font-semibold">

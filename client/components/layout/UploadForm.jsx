@@ -104,7 +104,7 @@ function UploadForm() {
     };
 
     return (
-        <section className="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65 dark:shadow-[0_24px_80px_rgba(2,6,23,0.4)]">
+        <section className="motion-card motion-fade-up rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-slate-900/65 dark:shadow-[0_24px_80px_rgba(2,6,23,0.4)]">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-2xl">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
@@ -119,21 +119,21 @@ function UploadForm() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-orange-200 bg-orange-50 p-4 dark:border-orange-400/20 dark:bg-orange-500/10">
+                    <div className="motion-card rounded-2xl border border-orange-200 bg-orange-50 p-4 dark:border-orange-400/20 dark:bg-orange-500/10">
                         <IconBubble icon="target" tone="orange" className="h-10 w-10 rounded-xl" />
                         <p className="mt-3 text-sm font-semibold text-slate-900 dark:text-white">Role match</p>
                         <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300">
                             Define the role you want to prepare for.
                         </p>
                     </div>
-                    <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-400/20 dark:bg-sky-500/10">
+                    <div className="motion-card rounded-2xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-400/20 dark:bg-sky-500/10">
                         <IconBubble icon="company" tone="sky" className="h-10 w-10 rounded-xl" />
                         <p className="mt-3 text-sm font-semibold text-slate-900 dark:text-white">Company lens</p>
                         <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300">
                             Keep the analysis aligned with your target employer.
                         </p>
                     </div>
-                    <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-400/20 dark:bg-emerald-500/10">
+                    <div className="motion-card rounded-2xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-400/20 dark:bg-emerald-500/10">
                         <IconBubble icon="roadmap" tone="emerald" className="h-10 w-10 rounded-xl" />
                         <p className="mt-3 text-sm font-semibold text-slate-900 dark:text-white">AI roadmap</p>
                         <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300">
@@ -221,7 +221,7 @@ function UploadForm() {
                                 </div>
                             </div>
 
-                            <label className="inline-flex cursor-pointer items-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300">
+                            <label className="motion-button inline-flex cursor-pointer items-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-orange-400 dark:text-slate-950 dark:hover:bg-orange-300">
                                 <span aria-hidden="true">+</span>
                                 Select file
                                 <input
@@ -251,7 +251,7 @@ function UploadForm() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
+                        className="motion-button motion-glow inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
                     >
                         {loading ? "Analyzing your profile..." : "Analyze Resume"}
                         <span aria-hidden="true">-&gt;</span>
@@ -260,7 +260,7 @@ function UploadForm() {
                     <button
                         type="button"
                         onClick={() => navigate("/analytics")}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200"
+                        className="motion-button inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200"
                     >
                         View analytics
                     </button>

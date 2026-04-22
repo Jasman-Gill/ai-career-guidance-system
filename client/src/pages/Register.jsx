@@ -42,7 +42,7 @@ function Register() {
     return (
         <div className="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(249,115,22,0.18),_transparent_24%),radial-gradient(circle_at_bottom_left,_rgba(14,165,233,0.16),_transparent_24%),linear-gradient(180deg,_#fff8ef_0%,_#fffdf7_40%,_#f4fbff_100%)] px-4 py-10 dark:bg-[radial-gradient(circle_at_top_right,_rgba(251,146,60,0.18),_transparent_20%),radial-gradient(circle_at_bottom_left,_rgba(14,165,233,0.14),_transparent_24%),linear-gradient(180deg,_#0f172a_0%,_#111827_45%,_#020617_100%)]">
             <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.95fr]">
-                <div className="rounded-[2.5rem] border border-slate-200/70 bg-white p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-slate-950/55 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
+                <div className="motion-card motion-fade-up rounded-[2.5rem] border border-slate-200/70 bg-white p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-slate-950/55 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
                     <Link to="/" className="text-sm font-semibold text-orange-500">
                         Back to landing page
                     </Link>
@@ -116,7 +116,7 @@ function Register() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
+                            className="motion-button motion-glow inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
                         >
                             {loading ? "Creating account..." : "Sign up"}
                             <span aria-hidden="true">-&gt;</span>
@@ -131,7 +131,7 @@ function Register() {
                     </p>
                 </div>
 
-                <div className="rounded-[2.5rem] border border-white/70 bg-white/75 p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] backdrop-blur dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
+                <div className="motion-card motion-fade-up-delay-1 rounded-[2.5rem] border border-white/70 bg-white/75 p-8 shadow-[0_32px_90px_rgba(15,23,42,0.12)] backdrop-blur dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_32px_90px_rgba(2,6,23,0.45)]">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
                         What you unlock
                     </p>
@@ -152,7 +152,7 @@ function Register() {
                         ].map((item) => (
                             <div
                                 key={item.title}
-                                className="rounded-[1.75rem] border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-950/40"
+                                className="motion-card rounded-[1.75rem] border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-950/40"
                             >
                                 <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white">
                                     {item.title}
