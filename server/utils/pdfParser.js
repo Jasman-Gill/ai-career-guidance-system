@@ -1,8 +1,6 @@
-import fs from "fs";
 import { PDFParse } from "pdf-parse";
 
-const parsePDF = async (filePath) => {
-    const dataBuffer = fs.readFileSync(filePath);
+const parsePDF = async (dataBuffer) => {
     const parser = new PDFParse({ data: dataBuffer });
 
     try {

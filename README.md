@@ -76,8 +76,17 @@ GEMINI_API_KEY=your_gemini_api_key
 # GEMINI_MODEL=gemini-2.0-flash
 ```
 
-Why `PORT=5002`?
-- The frontend API client is currently hardcoded to `http://localhost:5002/api` in `client/src/services/api.js`.
+Create `client/.env`:
+
+```env
+VITE_API_BASE_URL=http://localhost:5002/api
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
 
 ### 4. Run the App
 
@@ -138,6 +147,29 @@ Frontend (`client/package.json`):
 
 Backend (`server/package.json`):
 - `npm run dev` - start API with nodemon
+
+## Deploy To Vercel
+
+This repository is configured to deploy the React app and Express API as one Vercel project. The API is served from `/api`, and uploaded PDFs are parsed in memory before their extracted text is saved to MongoDB.
+
+1. Push the latest repository changes to GitHub, including `vercel.json`, `api/index.js`, and `server/app.js`.
+2. In Vercel, select **Add New > Project**, import the GitHub repository, and keep the **Root Directory** set to the repository root.
+3. Vercel reads `vercel.json`, so leave the build and output directory overrides disabled in the dashboard.
+4. Before deploying, add these environment variables under **Settings > Environment Variables**. Select **Production**, **Preview**, and **Development** when appropriate.
+
+```env
+MONGO_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=a_long_random_secret
+GEMINI_API_KEY=your_gemini_api_key
+HF_API_KEY=your_hugging_face_token
+VITE_API_BASE_URL=/api
+```
+
+5. Add the `VITE_FIREBASE_*` variables only if Google login is enabled. Firebase client configuration is visible in the browser by design, but restrict the Firebase API key to your deployed domain in Firebase or Google Cloud.
+6. Deploy the project. Once Vercel gives you a domain, optionally add `CLIENT_ORIGIN=https://your-project.vercel.app` and redeploy to restrict browser access to that origin.
+7. In MongoDB Atlas, add a database user and allow Vercel to reach the cluster. Vercel uses dynamic outbound IP addresses, so Atlas deployments commonly require `0.0.0.0/0` in Network Access; use a strong database password and least-privilege user.
+
+The Vercel Function accepts PDF uploads up to 4 MB. This stays below Vercel's 4.5 MB function request limit.
 
 ## Troubleshooting
 

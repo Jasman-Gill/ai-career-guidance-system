@@ -1,25 +1,12 @@
-import fs from "fs";
-import path from "path";
 import multer from "multer";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const uploadDirectory = path.resolve(__dirname, "../uploads");
-
-fs.mkdirSync(uploadDirectory, { recursive: true });
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, uploadDirectory);
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + "-" + file.originalname);
-    },
-});
 
 const upload = multer({
-    storage,
+    // Serverless filesystems are ephemeral; parse the PDF directly from memory.
+    storage: multer.memoryStorage(),
+    limits: {
+        // Vercel Functions accept request bodies up to 4.5 MB.
+        fileSize: 4 * 1024 * 1024,
+    },
     fileFilter: (_req, file, cb) => {
         const isPdf =
             file.mimetype === "application/pdf" ||

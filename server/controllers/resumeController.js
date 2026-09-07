@@ -9,10 +9,8 @@ export const uploadResume = async (req, res) => {
             });
         }
 
-        const filePath = req.file.path;
-
         // Extract text from PDF
-        const extractedText = await parsePDF(filePath);
+        const extractedText = await parsePDF(req.file.buffer);
 
         if (!String(extractedText || "").trim()) {
             return res.status(400).json({
@@ -22,7 +20,7 @@ export const uploadResume = async (req, res) => {
 
         const resume = await Resume.create({
             userId: req.body.userId,
-            filePath,
+            filePath: "memory-upload",
             originalFileName: req.file.originalname,
             extractedText,
         });
